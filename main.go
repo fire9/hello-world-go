@@ -1,14 +1,19 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 
 	"github.com/fire9/hello-world-go/doctor"
 )
 
 func main() {
-	// var whatToSay string
-	// whatToSay = doctor.Intro()
+	reader := bufio.NewReader(os.Stdin)
 	whatToSay := doctor.Intro()
 	fmt.Println(whatToSay)
+
+	userInput, _ := reader.ReadString('\n')
+
+	fmt.Println(userInput)
 }
